@@ -1,22 +1,75 @@
-// comentario
-/* comentario de bloco */
+//função simples (questão 1)
+const nome = "Hudson";
+const idade = 18;
+const cidade = "Registro";
 
-// coisas gostosas
+function showInfo(nome, idade, cidade) {
+  document.write(
+    `<p> Nome: ${nome} </p> <p> Idade: ${idade} </p> <p> Cidade: ${cidade} </p>`,
+  );
+}
 
-//  Var não é muito seguro, não usar muito
-//  Let: usa quando tiver que reatibuir
-//  Const: Usa quando não precisa reatribuir
-var cidade = "registro";
-var cidade = "sete barras";
-document.write(cidade);
+showInfo(nome, idade, cidade);
 
-let nome = maria;
-nome = diego
-document.write("<br>")
-document.write(nome)
+// dividir (questão2)
+const n1 = 40;
+const n2 = 2;
+function dividir(n1, n2) {
+  const divi = n1 / n2;
 
-const pais = "brasil"
-pais = "argentina"
+  document.writeln(`<p> O resultado da divisão foi.. ${divi}`);
+}
 
+dividir(n1, n2);
 
-document.write(pais)
+//multplicar tarefa 3
+
+function multi(n1, n2) {
+  return n1 * n2;
+}
+
+document.writeln(`<p> O resultado da multiplicação foi.. ${multi(n1, n2)}`);
+
+//  atividade 4, maior ou menor de idade
+
+const maiorIdade = 18;
+
+function verificarIdade(maiorIdade) {
+  if (maiorIdade >= 18) {
+    return "Maior de idade";
+  } else {
+    return "Menor de idade";
+  }
+}
+var resultado1 = verificarIdade(maiorIdade);
+document.writeln(`<p> ${resultado1} </p>`);
+
+// atividade 5 (function anonima)
+
+const media = function (n1, n2) {
+  return (n1 + n2) / 2;
+};
+
+let nota1 = 6;
+let nota2 = 1;
+
+function nota() {
+  if (media(nota1, nota2) >= 5) {
+    document.writeln("Aprovado");
+  } else {
+    document.writeln("Reprovado");
+  }
+}
+nota();
+
+// atividade 6 (tiplicar com arrow 1 numero)
+const triplo = (a) => {
+  return eval(`${a * 3}`);
+};
+document.write(`<p> o triplo é: ${triplo(1000)}`);
+
+// atividade 7 (somar com arrow 4 numeros)
+const somas = (a, b, c ,d) => {
+  return eval(`${a + b + c + d}`);
+};
+document.write(`<p> o resultado da operação é: ${somas(1, 50, 67, 3)}`);
