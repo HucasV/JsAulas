@@ -3,9 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clientes</title>
+    <title>servicos</title>
 </head>
 <body>
     <h1>SERVICOS</h1>
+    <table border="1">
+        <tr>
+            <th>Serviço</th>
+            <th>descrição</th>
+            <th>preço</th>
+        </tr>
+        <% servicos.forEach(function(servico){ %>
+            <tr>
+                <td><%= servico.servico %></td>
+                <td><%= servico.descricao %></td>
+                <td><%= servico.preco %></td>
+            </tr>
+        
+        <% }) %>
+
+        </table>
 </body>
 </html>

@@ -17,15 +17,43 @@ app.get("/", function (req, res) {
 });
 
 app.get("/clientes", function (req, res) {
-  res.render("clientes");
+  const listaClientes = ['jorge', 'douglas', 'luiz', 'demiurgo']
+  res.render("clientes", {
+    listaClientes : listaClientes
+  });
+})
+
+app.get("/clientes/:clientes", function (req, res) {
+  const clientes = req.params.clientes;
+  res.render("detalhesClientes", {
+    clientes:clientes,
+  });
 })
 
 app.get("/Produtos", function (req, res) {
-  res.render("Produtos");
+  const listaProdutos = ['celular', 'computador', 'tablet', 'demiurgo']
+  res.render("Produtos", {
+    listaProdutos : listaProdutos
+  });
+})
+
+app.get("/Produtos/:produto", function (req, res) {
+  const produto = req.params.produto;
+  res.render("detalhesProduto", {
+    produto:produto,
+  });
 })
 
 app.get("/Servicos", function (req, res) {
-  res.render("Servicos");
+  const servicos = [{servico: "desenvolvimento web", descricao: "criar web sites", preco: 1500}, 
+    {servico: "avaliação de usuabilidade", descricao: "avaliar a usabilidade dos web sites", preco: 1800},
+    {servico: "infraestrutura em nuvem", descricao: "configurar servidores", preco: 2800},
+    {servico: "chat bot com IA", descricao: "desenvolver chatbot para atendimento", preco: 3000}
+  ]
+
+  res.render("Servicos", {
+    servicos : servicos
+  })
 })
 
 
